@@ -1,33 +1,49 @@
-set nocompatible 
-filetype off
-
-" set the runtime path to include Vundle and initialize
- set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
-
-" let Vundle manage Vundle, required
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'morhetz/gruvbox'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'airblade/vim-gitgutter'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" colorscheme
-" =====================================
-let g:gruvbox_italic=1
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
-set t_Co=256
-set background=dark
-let g:indent_guides_enable_on_vim_startup = 1
-set ts=4 sw=4 et
-let g:indent_guides_start_lavel=2
-let g:indent_guides_guide_size=1
-set guicursor=i:ver25-iCursor
-let g:gitgutter_terminal_reports_focus=0
-
+  1 set nocompatible                                                                                                                                                                                         
+  2 filetype off                                                                                                                                                                                             
+  3                                                                                                                                                                                                          
+  4 " set the runtime path to include Vundle and initialize                                                                                                                                                  
+  5  set rtp+=~/.vim/bundle/Vundle.vim                                                                                                                                                                       
+  6  call vundle#begin()                                                                                                                                                                                     
+  7                                                                                                                                                                                                          
+  8 " let Vundle manage Vundle, required                                                                                                                                                                     
+  9                                                                                                                                                                                                          
+ 10 Plugin 'gmarik/Vundle.vim'                                                                                                                                                                               
+ 11 Plugin 'scrooloose/nerdtree'                                                                                                                                                                             
+ 12 Plugin 'morhetz/gruvbox'                                                                                                                                                                                 
+ 13 Plugin 'nathanaelkane/vim-indent-guides'                                                                                                                                                                 
+ 14 Plugin 'airblade/vim-gitgutter'                                                                                                                                                                          
+ 15 Plugin 'junegunn/fzf'                                                                                                                                                                                    
+ 16 Plugin 'valloric/youcompleteme'                                                                                                                                                                          
+ 17 Plugin 'kien/ctrlp.vim'                                                                                                                                                                                  
+ 18 Plugin 'shawncplus/phpcomplete.vim'                                                                                                                                                                      
+ 19                                                                                                                                                                                                          
+ 20 " All of your Plugins must be added before the following line                                                                                                                                            
+ 21 call vundle#end()            " required                                                                                                                                                                  
+ 22 filetype plugin indent on    " required                                                                                                                                                                  
+ 23                                                                                                                                                                                                          
+ 24 " colorscheme                                                                                                                                                                                            
+ 25 " =====================================                                                                                                                                                                  
+ 26 let g:gruvbox_italic=1                                                                                                                                                                                   
+ 27 colorscheme gruvbox                                                                                                                                                                                      
+ 28 let g:gruvbox_contrast_dark = 'soft'                                                                                                                                                                     
+ 29 set background=dark                                                                                                                                                                                      
+ 30 set t_Co=256                                                                                                                                                                                             
+ 31 let g:indent_guides_enable_on_vim_startup = 1                                                                                                                                                            
+ 32 set ts=4 sw=4 et                                                                                                                                                                                         
+ 33 let g:indent_guides_start_lavel=2                                                                                                                                                                        
+ 34 let g:indent_guides_guide_size=1                                                                                                                                                                         
+ 35 set guicursor=i:ver25-iCursor                                                                                                                                                                            
+ 36 let g:gitgutter_terminal_reports_focus = 0                                                                                                                                                               
+ 37                                                                                                                                                                                                          
+ 38 " tmux setting                                                                                                                                                                                           
+ 39 set term=screen-256color                                                                                                                                                                                 
+ 40                                                                                                                                                                                                          
+ 41 " highlish search                                                                                                                                                                                        
+ 42 set hlsearch                                                                                                                                                                                             
+ 43 set nu                                                                                                                                                                                                   
+ 44                                                                                                                                                                                                          
+ 45                                                                                                                                                                                                          
+ 46 nnoremap <Up> :echomsg "use k"<cr>                                                                                                                                                                       
+ 47 nnoremap <Down> :echomsg "use j"<cr>                                                                                                                                                                     
+ 48 nnoremap <Left> :echomsg "use h"<cr>                                                                                                                                                                     
+ 49 nnoremap <Right> :echomsg "use l"<cr>  

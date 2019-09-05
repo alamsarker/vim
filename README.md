@@ -12,4 +12,9 @@ Install vim: http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-
 
 Add following commad in `.bashrc` or `.zshrc`
 
-alias tmux='tmux -2'                                                                                                                                                                                     
+alias tmux='tmux -2'
+
+# Ack
+
+1. Install act.vim package via vundle
+2. Install `sudo apt-get install ack`

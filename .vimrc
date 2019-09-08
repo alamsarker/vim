@@ -11,12 +11,12 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf'          
-Plugin 'valloric/youcompleteme'
+"Plugin 'junegunn/fzf'          
+"Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'        
-Plugin 'shawncplus/phpcomplete.vim'    
+"Plugin 'shawncplus/phpcomplete.vim'    
 Plugin 'itchyny/lightline.vim' 
-Plugin 'terryma/vim-multiple-cursors'  
+"Plugin 'terryma/vim-multiple-cursors'  
 Plugin 'posva/vim-vue'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'pangloss/vim-javascript'
@@ -31,6 +31,31 @@ Plugin 'vim-vdebug/vdebug'
 " All of your Plugins must be added before the following line    
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"----------------------------ctag----------------------------------------------
+"Install Ctags: apt-get install catgs
+"
+
+set tags=tags
+
+"----------------------------ctag----------------------------------------------
+
+let g:ackprg="ack -H --nocolor --nogroup --column"
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+
+"Immediately Search for the word under the cursor in a new tab
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
+"----------------------------ACK----------------------------------------------
+" ---------------PHP UNIT TEST---------------------------------------------
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+let g:test#php#phpunit#executable = 'docker exec food_api_fpm vendor/bin/phpunit'
+
+" ---------------PHP UNIT TEST---------------------------------------------
 
 " colorscheme
 " =====================================
@@ -60,7 +85,9 @@ set term=screen-256color
 " highlish search              
 set hlsearch 
 set nu     
-set tags=tags
+" ===============encoding=========
+set encoding=utf-8
+
 
 "=============TAB SETTING================
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
@@ -72,5 +99,21 @@ nnoremap <Left> :echomsg "use h"<cr>
 nnoremap <Right> :echomsg "use l"<cr>  
 
 " CTRLP      
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"Vdebug and xdebug settings
+
+if !exists('g:vdebug_options')
+    let g:vdebug_options = {}
+endif
+let g:vdebug_options.break_on_open = 1
+let g:vdebug_options.port = 9001
+let g:vdebug_options.server = 127.18.0.1
+let g:vdebug_options.path_maps = {"/var/www/html": "/home/kausar/workspace/foods-api"}
+
+if !exists('g:vdebug_features')
+    let g:vdebug_features = {}
+endif
+    let g:vdebug_features.max_children = 128

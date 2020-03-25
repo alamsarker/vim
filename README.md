@@ -18,3 +18,15 @@ alias tmux='tmux -2'
 
 1. Install act.vim package via vundle
 2. Install `sudo apt-get install ack`
+
+Add .ackrc in project directory and add the exclude dir/files for search:
+Example
+--ignore-file=is:tags
+--ignore-dir=storage
+--ignore-dir=data 
+
+# ctags
+1. sudo `apt-get install ctags` (Debian/Ubuntu Linux), or brew install ctags (OS X).
+2. In ~/.vimrc, add `set tags=tags`
+3. Go to your project directory, and run ctags -R or may be `ctags -R --language=php .`
+4. When editing, put your cursor over a variable, method or class and hit `Ctrl-]` to jump to its definition.

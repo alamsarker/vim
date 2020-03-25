@@ -12,7 +12,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'junegunn/fzf'          
-"Plugin 'valloric/youcompleteme'
+Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'kien/ctrlp.vim'        
 "Plugin 'shawncplus/phpcomplete.vim'    
 Plugin 'itchyny/lightline.vim' 
@@ -27,10 +27,13 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'vim-vdebug/vdebug'
+Plugin 'scrooloose/syntastic'
+
 
 " All of your Plugins must be added before the following line    
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 "----------------------------ctag----------------------------------------------
 "Install Ctags: apt-get install catgs
@@ -56,6 +59,21 @@ nmap <silent> t<C-g> :TestVisit<CR>
 let g:test#php#phpunit#executable = 'docker exec food_api_fpm vendor/bin/phpunit'
 
 " ---------------PHP UNIT TEST---------------------------------------------
+
+"----------------Syntastic-------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_phpcs_exe = 'docker run -it --rm -v "$(pwd)":/app phpcs'
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = '--standard=PSR2 -n'
+
+"----------------Syntastic-------------------------------------------------
 
 " colorscheme
 " =====================================

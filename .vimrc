@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'junegunn/fzf'          
+Plugin 'junegunn/fzf'          
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'kien/ctrlp.vim'        
 "Plugin 'shawncplus/phpcomplete.vim'    
@@ -120,6 +120,7 @@ nnoremap <Right> :echomsg "use l"<cr>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git\|app/cache\|bower_components'
 
 "Vdebug and xdebug settings
 

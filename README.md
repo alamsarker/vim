@@ -28,7 +28,7 @@ Example
 # ctags
 1. sudo `apt-get install ctags` (Debian/Ubuntu Linux), or brew install ctags (OS X).
 2. In ~/.vimrc, add `set tags=tags`
-3. Go to your project directory, and run ctags -R or may be `ctags -R --fields=+laimS --languages=php`
-4. When editing, put your cursor over a variable, method or class and hit `Ctrl-]` to jump to its definition.
+3. Go to your project directory, and run ctags -R or may be `ctags -R --fields=+laimS --languages=php --exclude=.git --exclude=data --exclude=node_modules --exclude=bower_components`
+4. When editing, put your cursor over a variable, method or class and hit `Ctrl + ]` to jump to its definition.
 
 ref: https://robhoward.id.au/blog/2012/03/ctags-with-vim/

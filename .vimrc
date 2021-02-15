@@ -120,7 +120,7 @@ nnoremap <Right> :echomsg "use l"<cr>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git\|app/cache\|bower_components'
+let g:ctrlp_custom_ignore='data\|node_modules\|DS_Store\|git\|app/cache\|bower_components'
 
 "Vdebug and xdebug settings
 
